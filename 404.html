@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<base href="/sparky-slovakia/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stránka sa nenašla – Sparky Slovakia s. r. o.</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Root-relative paths on purpose: this page is served for any missing URL. -->
+<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="icon" href="img/sparky-6a-auto.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon-6a.png">
+<meta name="theme-color" content="#121212">
+<style>
+  .hero-inner { grid-template-columns: minmax(0, 1fr); min-height: min(80vh, 40rem); }
+  .hero-title { font-size: clamp(3rem, 10vw, 7rem); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-inner wrap" aria-label="Hlavná navigácia">
+    <a href="./" class="nav-logo">
+      <!-- Logo mark 6a, dark-background version (the header is dark in both colour schemes).
+           Decorative (alt=""): the wordmark text next to it is the link's name. -->
+      <img class="nav-logo-mark" src="img/sparky-6a-dark.svg" alt="" width="44" height="44">
+      <span class="nav-logo-text"><span class="nav-logo-name">Sparky</span><span class="nav-logo-sub">Slovakia</span></span>
+    </a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="nf-title">
+    <div class="hero-inner wrap">
+      <div class="hero-content">
+        <p class="hero-tag">Chyba 404</p>
+        <h1 class="hero-title" id="nf-title">Stránka sa nenašla</h1>
+        <p class="hero-sub">Adresa, ktorú hľadáte, neexistuje alebo bola presunutá.</p>
+        <a href="./" class="btn hero-cta">Späť na úvodnú stránku</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner wrap">
+    <p>&copy; 2026 <strong>Sparky Slovakia s.&nbsp;r.&nbsp;o.</strong> — Všetky práva vyhradené.</p>
+  </div>
+</footer>
+
+</body>
+</html>

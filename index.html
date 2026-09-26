@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparky Slovakia s. r. o.</title>
+<meta name="description" content="Sparky Slovakia s. r. o. – spoľahlivé elektroinštalačné práce v rámci Bratislavy a blízkeho okolia. Klasické a inteligentné elektroinštalácie, vrátniky, prístupové systémy, štruktúrovaná kabeláž a MaR.">
+<meta name="color-scheme" content="light dark">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="icon" href="img/sparky-6a-auto.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon-6a.png">
+<meta name="theme-color" content="#121212">
+<!-- Must run before first paint (so no defer): hides the cookie banner for
+     returning visitors. A file, not inline, so the Content-Security-Policy
+     in .htaccess can forbid all inline scripts. -->
+<script src="js/cookie-check.js?v=7"></script>
+<script src="js/main.js?v=7" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Preskočiť na obsah</a>
+
+<!-- NAVBAR -->
+<header class="site-header" id="navbar">
+  <nav class="nav-inner wrap" aria-label="Hlavná navigácia">
+    <a href="#hero" class="nav-logo">
+      <!-- Logo mark 6a, dark-background version (the header is dark in both colour schemes).
+           Decorative (alt=""): the wordmark text next to it is the link's name. -->
+      <img class="nav-logo-mark" src="img/sparky-6a-dark.svg" alt="" width="44" height="44">
+      <span class="nav-logo-text"><span class="nav-logo-name">Sparky</span><span class="nav-logo-sub">Slovakia</span></span>
+    </a>
+    <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+      <svg class="icon icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      Menu
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">O&nbsp;nás</a></li>
+      <li><a href="#services">Služby</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- HERO -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="hero-inner wrap">
+    <div class="hero-content">
+      <p class="hero-tag">Profesionálne elektroinštalácie</p>
+      <h1 class="hero-title" id="hero-title"><span>Sparky</span> <span>Slovakia</span></h1>
+      <p class="hero-sub">Spoľahlivé elektroinštalačné práce v&nbsp;rámci Bratislavy a&nbsp;blízkeho okolia.</p>
+      <a href="#contact" class="btn hero-cta">Kontaktujte nás</a>
+    </div>
+    <!-- single-line schematic: supply → breaker → switch → lamp -->
+    <!-- Power-on sequence: wires draw, both switches snap shut, a spark runs
+         to the bulb, the bulb flickers on. Replays on hover/tap (js/main.js).
+         Without animation (reduced motion) it simply shows the lit final state. -->
+    <svg class="hero-schematic play" viewBox="0 0 480 220" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="bulb-halo">
+          <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+          <stop offset="0.35" stop-color="#FFFFFF" stop-opacity="0.4"/>
+          <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle class="halo" cx="390" cy="110" r="120" fill="url(#bulb-halo)"/>
+      <path class="energized" pathLength="1" d="M20 110H360"/>
+      <circle class="node" cx="20" cy="110" r="7"/>
+      <path class="wire wire-a" pathLength="1" d="M20 110H110"/>
+      <path class="wire blade blade-1" pathLength="1" d="M110 110H150"/>
+      <path class="wire wire-b" pathLength="1" d="M150 110H250"/>
+      <path class="wire blade blade-2" pathLength="1" d="M250 110H300"/>
+      <path class="wire wire-c" pathLength="1" d="M300 110H360"/>
+      <circle class="bulb-glass" cx="390" cy="110" r="29"/>
+      <path class="wire wire-lamp" pathLength="1" d="M360 110a30 30 0 1 0 60 0a30 30 0 1 0-60 0M369 89l42 42M411 89l-42 42M420 110h40v70M440 180h40M448 192h24M456 204h8"/>
+      <path class="wire ray" pathLength="1" d="M390 62V34M426 74l18-18M354 74l-18-18"/>
+      <circle class="node" cx="110" cy="110" r="5"/>
+      <circle class="node" cx="150" cy="110" r="5"/>
+      <circle class="node" cx="250" cy="110" r="5"/>
+      <circle class="node" cx="300" cy="110" r="5"/>
+      <g class="spark">
+        <circle r="24" cx="20" cy="110" fill="url(#bulb-halo)"/>
+        <circle class="spark-core" r="7" cx="20" cy="110"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- O NÁS -->
+<section class="section wrap" id="about" aria-labelledby="about-title">
+  <div class="section-rail">O&nbsp;nás</div>
+  <div class="section-body">
+    <h2 class="section-title" id="about-title">Kto sme</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Sme slovenská spoločnosť so skúsenosťami v&nbsp;oblasti elektroinštalácií a&nbsp;elektrotechnických prác. Naším cieľom je poskytovať kvalitné a&nbsp;spoľahlivé služby na mieru každému zákazníkovi.</p>
+        <p>Máme viac ako 10 rokov skúseností s&nbsp;elektroinštaláciami v&nbsp;rámci projektov od bytov, cez rodinné domy, kancelárie, bytové domy až po haly. Pracujeme s&nbsp;moderným vybavením a&nbsp;dôrazom na bezpečnosť a&nbsp;kvalitu odvedenej práce.</p>
+      </div>
+      <dl class="plate">
+        <div class="plate-row"><dt>Rokov skúseností</dt><dd>10+</dd></div>
+        <div class="plate-row"><dt>Dostupnosť pre havárie</dt><dd>24/7</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- SLUŽBY -->
+<section class="section wrap" id="services" aria-labelledby="services-title">
+  <div class="section-rail">Čo robíme</div>
+  <div class="section-body">
+    <h2 class="section-title" id="services-title">Naše služby</h2>
+    <ul class="services-list">
+      <li class="service">
+        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="12" r="1.2" fill="currentColor"/><circle cx="15.5" cy="12" r="1.2" fill="currentColor"/><path d="M12 3v2.5M12 18.5V21"/></svg></span>
+        <div>
+          <h3 class="service-title">Klasické elektroinštalácie</h3>
+          <p class="service-desc">Zásuvkové a&nbsp;svetelné obvody v&nbsp;bytoch, rodinných domoch, kanceláriách, bytových domoch aj halách.</p>
+        </div>
+      </li>
+      <li class="service">
+        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.5 14.5a3.5 3.5 0 0 1 5 0M11 16.5a1.4 1.4 0 0 1 2 0"/></svg></span>
+        <div>
+          <h3 class="service-title">Inteligentné elektroinštalácie</h3>
+          <p class="service-desc">Elektroinštalácie s&nbsp;ovládaním osvetlenia a&nbsp;ďalších zariadení cez riadiaci systém.</p>
+        </div>
+      </li>
+      <li class="service">
+        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="1.5"/><rect x="8.5" y="5.5" width="7" height="5.5" rx="0.5"/><circle cx="12" cy="15" r="1.2" fill="currentColor"/><path d="M9.5 18.5h5"/></svg></span>
+        <div>
+          <h3 class="service-title">Audio/video vrátniky</h3>
+          <p class="service-desc">Montáž a&nbsp;zapojenie audio a&nbsp;video vrátnikov pre rodinné aj bytové domy.</p>
+        </div>
+      </li>
+      <li class="service">
+        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2.5"/></svg></span>
+        <div>
+          <h3 class="service-title">Prístupové systémy</h3>
+          <p class="service-desc">Montáž a&nbsp;zapojenie systémov na riadenie vstupu do budov a&nbsp;miestností.</p>
+        </div>
+      </li>
+      <li class="service">
+        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v10.5H6z"/><path d="M9 3v3M12 3v3M15 3v3"/><path d="M8.5 13.5V16h7v-2.5"/><path d="M12 16v5"/></svg></span>
+        <div>
+          <h3 class="service-title">Štruktúrovaná kabeláž</h3>
+          <p class="service-desc">Dátové a&nbsp;sieťové rozvody pre kancelárie, byty a&nbsp;domy.</p>
+        </div>
+      </li>
+      <li class="service">
+        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 17a8.5 8.5 0 1 1 15 0"/><path d="M12 13.5 15.5 9"/><circle cx="12" cy="14" r="1.3" fill="currentColor"/><path d="M4 20.5h16"/></svg></span>
+        <div>
+          <h3 class="service-title">MaR (meranie a&nbsp;regulácia)</h3>
+          <p class="service-desc">Elektroinštalácie pre meranie a&nbsp;reguláciu technických zariadení budov.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="section wrap" id="contact" aria-labelledby="contact-title">
+  <div class="section-rail">Kontakt</div>
+  <div class="section-body">
+    <h2 class="section-title" id="contact-title">Kontaktujte nás</h2>
+    <p class="contact-sub">Nezáväzná konzultácia je vždy zadarmo. Napíšte nám alebo zavolajte — odpovieme čo najskôr.</p>
+    <div class="contact-buttons">
+      <a href="tel:+421900000000" class="btn contact-btn contact-btn-primary">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .91h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +421 900 000 000
+      </a>
+      <a href="https://wa.me/421900000000" class="btn contact-btn" target="_blank" rel="noopener">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <!-- E-MAIL: nahraďte info@vasadomena.sk skutočnou adresou (na 2 miestach v tomto odkaze) -->
+      <a href="mailto:info@vasadomena.sk" class="btn contact-btn">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        info@vasadomena.sk
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner wrap">
+    <p>&copy; 2026 <strong>Sparky Slovakia s.&nbsp;r.&nbsp;o.</strong> — Všetky práva vyhradené.</p>
+    <!-- ÚDAJE O SPOLOČNOSTI: nahraďte slovo "doplniť" skutočnou hodnotou.
+         Ak riadok nepotrebujete, vymažte "doplniť" (ostane <dd></dd>) a riadok sa skryje. -->
+    <dl class="company-info" aria-label="Údaje o spoločnosti">
+      <div class="company-row"><dt>Obchodné meno</dt><dd>Sparky Slovakia s.&nbsp;r.&nbsp;o.</dd></div>
+      <div class="company-row"><dt>Sídlo</dt><dd>doplniť</dd></div>
+      <div class="company-row"><dt>IČO</dt><dd>doplniť</dd></div>
+      <div class="company-row"><dt>DIČ</dt><dd>doplniť</dd></div>
+      <div class="company-row"><dt>IČ DPH</dt><dd>doplniť</dd></div>
+      <div class="company-row"><dt>Zápis v&nbsp;OR</dt><dd>doplniť</dd></div>
+      <div class="company-row"><dt>E-mail</dt><dd>doplniť</dd></div>
+    </dl>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookies">
+  <div class="cookie-inner wrap">
+    <p class="cookie-text">
+      <strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 12.9A9 9 0 1 1 11.1 3.2a3 3 0 0 0 3.6 3.6 3 3 0 0 0 3.5 3.5 3 3 0 0 0 2.6 2.6z"/><circle cx="8.5" cy="10" r="1" fill="currentColor"/><circle cx="14.5" cy="15.5" r="1" fill="currentColor"/><circle cx="9" cy="15.5" r="1" fill="currentColor"/></svg>Cookies</strong> — Táto stránka môže používať cookies na zlepšenie vášho zážitku. Môžete všetky prijať alebo odmietnuť.
+    </p>
+    <div class="cookie-btns">
+      <button type="button" class="btn cookie-btn cookie-btn-decline" data-cookie="decline">Odmietnuť všetko</button>
+      <button type="button" class="btn cookie-btn cookie-btn-accept" data-cookie="accept">Prijať všetko</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
