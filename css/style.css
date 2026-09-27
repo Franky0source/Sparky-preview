@@ -21,40 +21,29 @@
 }
 
 /* ─── TOKENS ───
-   signal yellow #FFD21F · ink #17232B · enclosure #EEF0F0
-   panel #FFFFFF · conductor blue #1D5FA6 · slate #4F5D66 */
-/* Bricolage Grotesque (SIL OFL 1.1, see fonts/OFL-bricolage.txt): only for the
-   logo wordmark, as the logo handoff specifies. Latin only: "Sparky Slovakia"
-   needs no diacritics. */
-@font-face {
-  font-family: 'Bricolage Grotesque';
-  font-style: normal;
-  font-weight: 500 800;
-  font-display: swap;
-  src: url(../fonts/bricolage-latin.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
+   signal yellow #FFD21F · anthracite ink #2B2F33 · enclosure #EEF0F0
+   panel #FFFFFF · conductor blue #1D5FA6 · graphite #585E63 */
 :root {
   /* fixed brand primitives: never change with the colour scheme */
   --signal: #FFD21F;
   --signal-light: #FFE366;
-  --ink: #17232B;
-  --ink-raised: #2B3C47;
+  --ink: #2B2F33;
+  --ink-raised: #41464B;
 
   /* semantic tokens: redefined for dark mode below */
   --yellow: var(--signal);
   --yellow-hover: var(--signal-light);
   --bg: #EEF0F0;
   --surface: #FFFFFF;
-  --text: #17232B;
-  --muted: #4F5D66;
-  --line: #C9CFD2;
-  --line-strong: #17232B;
+  --text: #2B2F33;
+  --muted: #585E63;
+  --line: #CDD0D2;
+  --line-strong: #2B2F33;
   --link: #1D5FA6;
   --focus: #1D5FA6;
-  /* neutral (not blue) dark: a blue-tinted dark over the yellow hero mixes to green */
-  --nav-bg: rgba(18, 18, 18, 0.9);
+  /* see-through anthracite; the header's backdrop-filter greys out what's
+     behind it, so the yellow hero can't tint it green */
+  --nav-bg: rgba(43, 47, 51, 0.82);
   --btn-bg: var(--ink);
   --btn-bg-hover: var(--ink-raised);
   --btn-text: var(--signal);
@@ -70,12 +59,12 @@
   :root {
     --yellow: #F5C800;
     --yellow-hover: var(--signal);
-    --bg: #17232B;
-    --surface: #1F2E38;
+    --bg: #2B2F33;
+    --surface: #353A3E;
     --text: #EEF0F0;
-    --muted: #AAB7BE;
-    --line: #34464F;
-    --line-strong: #6E8290;
+    --muted: #B5BABE;
+    --line: #4A5055;
+    --line-strong: #858C92;
     --link: var(--signal);
     --focus: var(--signal);
     --btn-bg: var(--signal);
@@ -157,16 +146,20 @@ a { color: var(--link); }
      dark-scheme text/line colours for everything inside it. */
   --bg: var(--ink);
   --text: #EEF0F0;
-  --line: #34464F;
-  --line-strong: #6E8290;
+  --line: #4A5055;
+  --line-strong: #858C92;
   --link: var(--signal);
   --focus: var(--signal);
   color: var(--text);
   background: var(--nav-bg);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: grayscale(1) brightness(0.5) blur(12px);
+  backdrop-filter: grayscale(1) brightness(0.5) blur(12px);
   border-bottom: 1px solid rgba(255, 210, 31, 0.35);
   transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+/* browsers without backdrop-filter: nearly solid, so it doesn't turn olive */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header { background: rgba(43, 47, 51, 0.96); }
 }
 .site-header.is-hidden { transform: translateY(-100%); }
 
@@ -178,39 +171,24 @@ a { color: var(--link); }
   gap: var(--s2);
 }
 
-/* Logo lockup 6a (from the logo handoff): mark + "Sparky" with "SLOVAKIA"
-   centred under it. The header is dark in both colour schemes, so the
-   handoff's dark-background colours apply everywhere. */
+/* Logo: "Sparky / Slovakia" as text only, set like the hero title
+   (Archivo, heavy, condensed, stacked), in signal yellow on the dark header. */
 .nav-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   min-height: 44px;
   text-decoration: none;
 }
-.nav-logo-mark { display: block; width: 44px; height: 44px; flex: none; }
 .nav-logo-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  line-height: 1;
-  font-family: 'Bricolage Grotesque', Helvetica, Arial, sans-serif;
-}
-.nav-logo-name {
-  font-size: 1.5rem;
-  font-weight: 800;
+  align-items: flex-start;
+  font-weight: 850;
+  font-stretch: 62%;
+  font-size: 1.625rem;
+  line-height: 0.84;
   letter-spacing: -0.02em;
-  color: #FFFFFF;
-}
-.nav-logo-sub {
-  margin-top: 3px;
-  /* cancels the trailing letter-spacing so the word centres optically */
-  margin-right: -0.32em;
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: #F7C531;
+  color: var(--signal);
 }
 
 .nav-toggle {
@@ -412,19 +390,26 @@ a { color: var(--link); }
 }
 
 /* ─── O NÁS ─── */
+/* text on the left, the "10+" plate beside it, centred against the text;
+   on phones the plate goes full width under the text */
 .about-grid {
   display: grid;
   gap: var(--s4);
+  align-items: center;
+}
+@media (min-width: 721px) {
+  .about-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); column-gap: var(--s5); }
 }
 .about-text p { max-width: 62ch; }
 .about-text p + p { margin-top: var(--s2); color: var(--muted); }
 .about-text p:first-child { font-size: 1.25rem; line-height: 1.5; }
 
-/* rating plate: two figures side by side under the text */
+/* rating plate: big figure set like the hero title, label under it, centred;
+   more figures would sit side by side */
 .plate {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 36rem;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
   border: 2px solid var(--line-strong);
   border-radius: 6px;
   background: var(--surface);
@@ -432,21 +417,25 @@ a { color: var(--link); }
 .plate-row {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  padding: 1.1rem 1.25rem 1.2rem;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s4) var(--s3) var(--s4);
+  text-align: center;
 }
 .plate-row + .plate-row { border-left: 1px solid var(--line); }
 .plate dt {
   order: 2;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 .plate dd {
   order: 1;
-  font-weight: 800;
-  font-stretch: 70%;
-  font-size: clamp(2.5rem, 8vw, 3.25rem);
-  line-height: 1;
+  font-weight: 850;
+  font-stretch: 62%;
+  font-size: clamp(6rem, 11vw, 9.5rem);
+  line-height: 0.84;
+  letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -482,12 +471,6 @@ a { color: var(--link); }
 .service-desc { color: var(--muted); max-width: 48ch; }
 
 /* ─── KONTAKT ─── */
-.contact-sub {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  max-width: 44ch;
-  margin-bottom: var(--s4);
-}
 .contact-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -551,7 +534,7 @@ a { color: var(--link); }
   z-index: 1500;
   background: var(--surface);
   border-top: 3px solid var(--yellow);
-  box-shadow: 0 -2px 16px rgba(23, 35, 43, 0.14);
+  box-shadow: 0 -2px 16px rgba(43, 47, 51, 0.14);
 }
 /* returning visitor: hidden before first paint by the inline <head> script */
 .cookie-chosen .cookie-banner { display: none; }
